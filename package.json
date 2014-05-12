@@ -4,7 +4,7 @@
     "description": "Calculate the information entropy of a string",
     "main": "index.js",
     "scripts": {
-        "test": "mocha index.js"
+        "test": "./node_modules/mocha/bin/mocha -u tdd -R spec test"
     },
     "repository": {
         "type": "git",
@@ -25,6 +25,7 @@
     "devDependencies": {
         "lodash": "^2.4.1",
         "js-beautify": "^1.5.1",
-        "jshint": "^2.5.0"
+        "jshint": "^2.5.0",
+        "mocha": "^1.18.2"
     }
 }
