@@ -1,0 +1,30 @@
+{
+    "name": "string-entropy",
+    "version": "0.0.1",
+    "description": "Calculate the information entropy of a string",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mvhenten/string-entropy.git"
+    },
+    "keywords": [
+    "string",
+    "entropy",
+    "password",
+    "encryption"
+  ],
+    "author": "Matthijs van Henten",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mvhenten/string-entropy/issues"
+    },
+    "homepage": "https://github.com/mvhenten/string-entropy",
+    "devDependencies": {
+        "lodash": "^2.4.1",
+        "js-beautify": "^1.5.1",
+        "jshint": "^2.5.0"
+    }
+}
