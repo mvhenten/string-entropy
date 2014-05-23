@@ -1,3 +1,5 @@
+'use strict';
+
 var entropy = require('../index'),
     assert = require('assert'),
     fs = require('fs'),
@@ -24,7 +26,7 @@ suite('string-entropy', function() {
             var lines = data.toString().split(/\n/);
 
             lines.forEach(function(str) {
-                assert.ok(entropy(str) < 70, "Yup, that's a weak password");
+                assert.ok(entropy(str) < 70, 'Yup, that\'s a weak password');
             });
 
             done();
