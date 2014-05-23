@@ -5,3 +5,10 @@ tidy:
 
 lint:
 	@./node_modules/jshint/bin/jshint --verbose $(GIT_MODIFIED_UPDATED)
+
+dist:
+	./node_modules/browserify/bin/cmd.js -t uglifyify --standalone entropy index.js > dist/string-entropy.js
+	./node_modules/browserify/bin/cmd.js plugin/entropy.bootstrap.js > dist/entropy.bootstrap.min.js
+	./node_modules/browserify/bin/cmd.js -t uglifyify plugin/entropy.bootstrap.js > dist/entropy.bootstrap.min.js
+
+.PHONY: dist
