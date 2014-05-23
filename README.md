@@ -13,7 +13,12 @@ sized alphabet based on the actual contents of the string.
 
 ### Documentation
 
-See the [annotated sources](http://mvhenten.github.io/string-entropy/) or have a look at [index.js](index.js)
+See the [annotated sources](http://mvhenten.github.io/string-entropy/) or have a look at [index.js](index.js).
+
+### Browser support
+
+A number of builds are available in the `dist` folder. Checkout the [demo](http://mvhenten.github.io/string-entropy/demo.html) for an example of this module
+implemented as a bootstrap plugin.
 
 ### Example
 
