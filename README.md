@@ -9,7 +9,7 @@ As pointed out by [other sources](http://xkcd.com/936/), string entropy is propa
 scoring a password. This module implements the algorithm described [here](https://en.wikipedia.org/wiki/Password_strength#Entropy_as_a_measure_of_password_strength), using a variable
 sized alphabet based on the actual contents of the string.
 
-[image of the formula for information entropy calculation](https://upload.wikimedia.org/math/6/2/7/6270d629826e5df0949332423566dd78.png)
+![image of the formula for information entropy calculation](https://upload.wikimedia.org/math/6/2/7/6270d629826e5df0949332423566dd78.png)
 
 ### Documentation
 
