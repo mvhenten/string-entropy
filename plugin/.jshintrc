@@ -1,0 +1,13 @@
+{
+    "node": true,
+    "browser": true,
+    "nonstandard": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "globalstrict": true,
+    "globals": {
+        "require": true
+    }
+}
