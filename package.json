@@ -1,22 +1,25 @@
 {
     "name": "string-entropy",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Calculate the information entropy of a string",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "test": "./node_modules/mocha/bin/mocha -u tdd -R spec test",
-        "doc": "./node_modules/docco/bin/docco index.js"
+        "fix": "prettier -w src",
+        "test": "npm run test:style && npm run test:unit",
+        "test:unit": "node dist/index.test.js",
+        "test:style": "prettier -c src",
+        "prepare": "tsc"
     },
     "repository": {
         "type": "git",
         "url": "git://github.com/mvhenten/string-entropy.git"
     },
     "keywords": [
-    "string",
-    "entropy",
-    "password",
-    "encryption"
-  ],
+        "string",
+        "entropy",
+        "password",
+        "encryption"
+    ],
     "author": "Matthijs van Henten",
     "license": "MIT",
     "bugs": {
@@ -24,12 +27,8 @@
     },
     "homepage": "https://github.com/mvhenten/string-entropy",
     "devDependencies": {
-        "lodash": "^2.4.1",
-        "js-beautify": "^1.5.1",
-        "jshint": "^2.5.0",
-        "mocha": "^1.18.2",
-        "docco": "^0.6.3",
-        "browserify": "^4.1.5",
-        "uglifyify": "^2.4.0"
+        "@types/node": "^20.12.11",
+        "prettier": "^3.2.5",
+        "typescript": "^5.4.5"
     }
 }
