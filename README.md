@@ -14,7 +14,7 @@ sized alphabet based on the actual contents of the string.
 
 ### Documentation
 
-See the annotated sources [src/index.js](src/index.js).
+See the annotated sources [src/index.ts](src/index.ts).
 
 ### Example
 
