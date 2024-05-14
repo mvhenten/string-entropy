@@ -1,14 +1,22 @@
 {
     "name": "string-entropy",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Calculate the information entropy of a string",
-    "main": "dist/index.js",
+    "main": "./dist/cjs/index.cjs",
+    "type": "module",
+    "exports": {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/cjs/index.cjs"
+    },
     "scripts": {
         "fix": "prettier -w src",
         "test": "npm run test:style && npm run test:unit",
         "test:unit": "node dist/index.test.js",
         "test:style": "prettier -c src",
-        "prepare": "tsc"
+        "prepare": "npm run build",
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:cjs": "tsc && mv dist/cjs/index.js dist/cjs/index.cjs"
     },
     "repository": {
         "type": "git",
