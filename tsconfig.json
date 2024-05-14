@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "dist/cjs",
     "target": "ES2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
 
     /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
+    "module": "CommonJS",                                /* Specify what module code is generated. */
 
 
     /* Emit */
