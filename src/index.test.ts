@@ -1,8 +1,8 @@
-const assert = require("node:assert/strict");
+import * as assert from "node:assert/strict";
 
 import { test } from "node:test";
 import { readFileSync } from "node:fs";
-import { entropy } from "./index";
+import { entropy } from "./index.js";
 
 test("alpha numeric strings between 8 and 9 have an entropy less then 50", () => {
   for (let i = 0; i < 99999; i++) {
@@ -23,7 +23,7 @@ test("phrases make better passwords", () => {
 });
 
 test("the 10k most common passwords are weak", () => {
-  const data = readFileSync(__dirname + "/../10k_most_common.txt");
+  const data = readFileSync(process.cwd() + "/10k_most_common.txt");
   const lines = data.toString().split(/\n/);
 
   for (const pwd of lines) {
