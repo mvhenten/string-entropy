@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String entropy demo</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+    <style>
+      body, html { 
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font: 14px/22px sans-serif;
+        color: #444;
+        background-color: #f3f3f3;
+      }
+      #container {
+        height: 60%;
+        overflow:none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form {
+        width: 400px;
+        background-color: #fefefe;
+        padding: 2em 3em;
+        box-shadow: 5px 3px 3px #7c7c7c82;
+        border-radius: 5px;
+      }
+
+      label {
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        line-height: inherit;
+        font: inherit;
+        padding: 0 3px;
+        border-radius: 4px;
+      }
+
+      input:focus-visible {
+        border: 1px solid #999;
+        outline: none;
+      }
+
+      fieldset {
+        border: 1px solid #ccc;
+      }
+
+      #strength-indicator {
+        display: inline-block;
+        height: 5px;
+        border-radius: 3px;
+        width: 30%;
+        background-color: blue;
+    }
+  </style>
+  </head>
+  <body>
+    <main id="container">
+        <form>
+          <div>
+            <label>Password-strength o'meter</label>
+            <input id="input" type="password" placeholder="Type a strong password here"/>
+
+          </div>
+              <div>
+                <div id="strength-indicator"></div>
+                <div><small id="strength-text">Additional text here</small></div>
+            </div>
+        </form>
+    </main>
+    <pre id="log"></pre>
+    <script type="module" src="./demo.mjs"></script>
+  </body>
+</html>
