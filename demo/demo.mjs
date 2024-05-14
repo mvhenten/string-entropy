@@ -1,4 +1,4 @@
-import { entropy } from "./dist/index.js"
+import { entropy } from "./dist/esm/index.js"
 
 const inputField = document.querySelector("#input");
 const strengthIndicator = document.querySelector("#strength-indicator");
@@ -38,6 +38,7 @@ const color = (value, max, colors) => {
 }
 
 const strengthInfo = (value) => {
+    if (value == 0) return "Start typing to calculate entropy";
     const snark = [
         [25, "extremely weak."],
         [47, "'swordfish'...?"],

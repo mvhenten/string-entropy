@@ -13,7 +13,9 @@
         "test": "npm run test:style && npm run test:unit",
         "test:unit": "node dist/index.test.js",
         "test:style": "prettier -c src",
-        "prepare": "npm run build",
+        "prepare": "npm run build && npm run prepare:demo",
+        "prepare:demo": "cp -r dist demo/",
+        "demo": "serve demo",
         "build": "npm run build:esm && npm run build:cjs",
         "build:esm": "tsc -p tsconfig.esm.json",
         "build:cjs": "tsc && mv dist/cjs/index.js dist/cjs/index.cjs"
@@ -37,6 +39,7 @@
     "devDependencies": {
         "@types/node": "^20.12.11",
         "prettier": "^3.2.5",
+        "serve": "^14.2.3",
         "typescript": "^5.4.5"
     }
 }
