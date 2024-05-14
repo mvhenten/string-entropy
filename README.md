@@ -12,6 +12,10 @@ sized alphabet based on the actual contents of the string.
 
 ![image of the formula for information entropy calculation](https://upload.wikimedia.org/math/6/2/7/6270d629826e5df0949332423566dd78.png)
 
+### Demo
+
+A [simple password strength meter](https://mvhenten.github.io/string-entropy/) that updates as you type.
+
 ### Documentation
 
 See the annotated sources [src/index.ts](src/index.ts).
@@ -19,7 +23,7 @@ See the annotated sources [src/index.ts](src/index.ts).
 ### Example
 
 ```javascript
-var entropy = require('string-entropy');
+const { entropy } = require('string-entropy');
 
 console.log(entropy('correct horse battery staple'));
 // outputs  132
