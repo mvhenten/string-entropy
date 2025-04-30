@@ -23,7 +23,7 @@ See the annotated sources [src/index.ts](src/index.ts).
 ### Example
 
 ```javascript
-const { entropy } = require('string-entropy');
+import { entropy } from "string-entropy";
 
 console.log(entropy('correct horse battery staple'));
 // outputs  132
