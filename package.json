@@ -4,6 +4,9 @@
     "description": "Calculate the information entropy of a string",
     "main": "./dist/cjs/index.cjs",
     "type": "module",
+    "files": [
+        "dist"
+    ],
     "exports": {
         "import": "./dist/esm/index.js",
         "require": "./dist/cjs/index.cjs"
