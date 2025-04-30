@@ -1,9 +1,12 @@
 {
     "name": "string-entropy",
-    "version": "0.0.4",
+    "version": "0.1.2",
     "description": "Calculate the information entropy of a string",
     "main": "./dist/cjs/index.cjs",
     "type": "module",
+    "files": [
+        "dist"
+    ],
     "exports": {
         "import": "./dist/esm/index.js",
         "require": "./dist/cjs/index.cjs"
