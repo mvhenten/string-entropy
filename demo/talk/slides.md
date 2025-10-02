@@ -4,7 +4,8 @@
 
 ---
 
-## 🧑‍💻 Matthijs van Henten - https://github.com/mvhenten/
+## 🧑‍💻 Matthijs van Henten 
+### https://github.com/mvhenten/
 
 ---
 
@@ -84,7 +85,7 @@ export const entropy = (str: string): number => {
 
 ---
 
-It's time top writing password validator regexes. 
+It's time stop writing password validator regexes. 
 
 **Use Entropy.**
 
