@@ -1,8 +1,8 @@
 const LOWERCASE_ALPHA = "abcdefghijklmnopqrstuvwxyz",
-  UPPERCASE_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  DIGITS = "0123456789",
-  PUNCT1 = "!@#$%^&*()",
-  PUNCT2 = "~`-_=+[]{}\\|;:'\",.<>?/";
+	UPPERCASE_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+	DIGITS = "0123456789",
+	PUNCT1 = "!@#$%^&*()",
+	PUNCT2 = "~`-_=+[]{}\\|;:'\",.<>?/";
 
 // Calculate the size of the alphabet.
 //
@@ -16,50 +16,50 @@ const LOWERCASE_ALPHA = "abcdefghijklmnopqrstuvwxyz",
  * @returns {Number} n Size of the alphabet
  */
 const alphabetSize = (str: string): number => {
-  let c: string;
-  let size = 0;
+	let c: string;
+	let size = 0;
 
-  const collect: Record<string, number> = {
-    alcaps: 0,
-    punct1: 0,
-    digits: 0,
-    alpha: 0,
-    unicode: 0,
-    size: 0,
-  };
+	const collect: Record<string, number> = {
+		alcaps: 0,
+		punct1: 0,
+		digits: 0,
+		alpha: 0,
+		unicode: 0,
+		size: 0,
+	};
 
-  let seen = "";
+	let _seen = "";
 
-  for (var i = 0; i < str.length; i++) {
-    c = str[i];
+	for (let i = 0; i < str.length; i++) {
+		c = str[i];
 
-    // we only need to look at each character once
-    if (str.indexOf(c) !== i) continue;
-    if (LOWERCASE_ALPHA.indexOf(c) !== -1)
-      collect.alpha = LOWERCASE_ALPHA.length;
-    else if (UPPERCASE_ALPHA.indexOf(c) !== -1)
-      collect.alcaps = UPPERCASE_ALPHA.length;
-    else if (DIGITS.indexOf(c) !== -1) collect.digits = DIGITS.length;
-    else if (PUNCT1.indexOf(c) !== -1) collect.punct1 = PUNCT1.length;
-    else if (PUNCT2.indexOf(c) !== -1) collect.size = PUNCT2.length;
-    // I can only guess the size of a non-western alphabet.
-    // The choice here is to grant the size of the western alphabet, together
-    // with an additional bonus for the character itself.
-    //
-    // Someone correct me if I'm wrong here.
-    else if (c.charCodeAt(0) > 127) {
-      collect.alpha = 26;
-      collect.unicode += 1;
-    }
+		// we only need to look at each character once
+		if (str.indexOf(c) !== i) continue;
+		if (LOWERCASE_ALPHA.indexOf(c) !== -1)
+			collect.alpha = LOWERCASE_ALPHA.length;
+		else if (UPPERCASE_ALPHA.indexOf(c) !== -1)
+			collect.alcaps = UPPERCASE_ALPHA.length;
+		else if (DIGITS.indexOf(c) !== -1) collect.digits = DIGITS.length;
+		else if (PUNCT1.indexOf(c) !== -1) collect.punct1 = PUNCT1.length;
+		else if (PUNCT2.indexOf(c) !== -1) collect.size = PUNCT2.length;
+		// I can only guess the size of a non-western alphabet.
+		// The choice here is to grant the size of the western alphabet, together
+		// with an additional bonus for the character itself.
+		//
+		// Someone correct me if I'm wrong here.
+		else if (c.charCodeAt(0) > 127) {
+			collect.alpha = 26;
+			collect.unicode += 1;
+		}
 
-    seen += c;
-  }
+		_seen += c;
+	}
 
-  for (var k in collect) {
-    size += collect[k];
-  }
+	for (const k in collect) {
+		size += collect[k];
+	}
 
-  return size;
+	return size;
 };
 
 // Calculate [information entropy](https://en.wikipedia.org/wiki/Password_strength#Entropy_as_a_measure_of_password_strength)
@@ -68,6 +68,6 @@ const alphabetSize = (str: string): number => {
  * @returns {Number} entropy
  */
 export const entropy = (str: string): number => {
-  if (!str) return 0;
-  return Math.round(str.length * (Math.log(alphabetSize(str)) / Math.log(2)));
+	if (!str) return 0;
+	return Math.round(str.length * (Math.log(alphabetSize(str)) / Math.log(2)));
 };
